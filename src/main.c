@@ -6,6 +6,8 @@
 #define screenWidth 800
 #define screenHeight 450
 
+//! func init
+void inputHandler(Vector2 *ballPosition);
 
 int main() {
 
@@ -17,19 +19,13 @@ int main() {
   };
 
   // set startup fps
-  SetTargetFPS(30);
+  SetTargetFPS(60);
 
   InitWindow(screenWidth, screenHeight, "Game");
 
   while (!WindowShouldClose()) {
 
-    // Update
-    //----------------------------------------------------------------------------------
-    if (IsKeyDown(KEY_RIGHT)) ballPosition.x += 2.0f;
-    if (IsKeyDown(KEY_LEFT)) ballPosition.x -= 2.0f;
-    if (IsKeyDown(KEY_UP)) ballPosition.y -= 2.0f;
-    if (IsKeyDown(KEY_DOWN)) ballPosition.y += 2.0f;
-    //----------------------------------------------------------------------------------
+    inputHandler(&ballPosition);
 
     BeginDrawing();
     ClearBackground(RAYWHITE);
@@ -42,4 +38,12 @@ int main() {
   CloseWindow();
 
   return 0;
+}
+
+
+void inputHandler(Vector2 *ballPosition) {
+  ballPosition->x += (IsKeyDown(KEY_RIGHT)) ? 2.0f : 0.0f;
+  ballPosition->x -= (IsKeyDown(KEY_LEFT)) ? 2.0f : 0.0f;
+  ballPosition->y -= (IsKeyDown(KEY_UP)) ? 2.0f : 0.0f;
+  ballPosition->y += (IsKeyDown(KEY_DOWN)) ? 2.0f : 0.0f;
 }
