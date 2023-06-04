@@ -1,7 +1,9 @@
+// machinee [2023]
+// develop branch
 #include "raylib.h"
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
   InitWindow(800, 450, "raylib [core] example - basic window");
 
