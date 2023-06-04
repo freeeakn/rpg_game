@@ -1,4 +1,4 @@
-// machinee [2023]
+// machinee [2023], Kalsky
 // develop branch
 #include "raylib.h"
 #include <stdio.h>
