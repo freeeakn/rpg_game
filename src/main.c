@@ -14,10 +14,7 @@ int main() {
 
   //! variables and start configuration
 
-  Vector2 ballPosition = {
-    (float)screenWidth / 2,
-    (float)screenHeight / 2,
-  };
+  Vector2 mousePoint = { 0.0f, 0.0f };
 
   // set startup fps
   SetTargetFPS(TargetFPS);
@@ -26,7 +23,7 @@ int main() {
 
   while (!WindowShouldClose()) {
 
-    inputHandler(&ballPosition);
+    mousePoint = GetMousePosition();
 
     BeginDrawing();
     ClearBackground(RAYWHITE);
