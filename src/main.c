@@ -5,6 +5,7 @@
 //! constants
 #define screenWidth 800
 #define screenHeight 450
+#define TargetFPS 60
 
 //! func init
 void inputHandler(Vector2 *ballPosition);
@@ -19,7 +20,7 @@ int main() {
   };
 
   // set startup fps
-  SetTargetFPS(60);
+  SetTargetFPS(TargetFPS);
 
   InitWindow(screenWidth, screenHeight, "Game");
 
